@@ -1,12 +1,43 @@
+# Python cache & virtual env
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.venv/
+env/
+venv/
+
+# Jupyter Notebook
 .ipynb_checkpoints/
-cache/
+
+# Datasets & model outputs
 datasets/
 models/
 checkpoints/
+outputs/
+
+# Trained model files
 *.bin
+*.pth
 *.pt
 *.safetensors
 *.pickle
 *.pkl
+
+# Logs
+logs/
+*.log
+
+# FastAPI / Uvicorn cache
+cache/
+
+# OS / Editor
 .DS_Store
+*.swp
+*.swo
+
+# HuggingFace cache
+huggingface_cache/
+transformers_cache/
