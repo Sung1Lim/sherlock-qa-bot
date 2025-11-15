@@ -1,0 +1,12 @@
+__pycache__/
+.ipynb_checkpoints/
+cache/
+datasets/
+models/
+checkpoints/
+*.bin
+*.pt
+*.safetensors
+*.pickle
+*.pkl
+.DS_Store
