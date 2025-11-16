@@ -32,7 +32,7 @@ Google Gemma-2-2B-IT 모델을 LoRA 방식으로 파인튜닝하여 셜록 홈�
 - 🧠 Gemma-2-2B-IT + LoRA(PEFT) 기반 Sherlock-Holmes QA 모델
 - 📥 HuggingFace Hub 자동 모델 로딩
 - ⚡ FastAPI + Uvicorn REST API 서버
-- 🎨 프론트엔드 UI 포함 (빅토리아 시대 테마)
+- 🎨 올인원 웹 UI (빅토리아 시대 테마, CSS/JS 내장)
 - 📚 헬스체크 / Swagger 문서 자동 제공
 - 💻 CPU 환경에서도 실행 가능
 
@@ -85,7 +85,7 @@ uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/` | 웹 채팅 UI |
-| `POST` | `/ask` | 셜록에게 질문하기 |
+| `POST` | `/ask` | 셜록에게 질문하기 (max_tokens, temperature 설정 가능) |
 | `GET` | `/health` | 서버 & 모델 상태 확인 |
 | `GET` | `/docs` | Swagger 문서 |
 
@@ -94,7 +94,11 @@ uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 ```bash
 curl -X POST "http://localhost:8000/ask" \
   -H "Content-Type: application/json" \
-  -d '{"question": "Who is Dr. Watson?"}'
+  -d '{
+    "question": "Who is Dr. Watson?",
+    "max_tokens": 300,
+    "temperature": 0.7
+  }'
 ```
 
 ### 📤 Response Example
@@ -138,16 +142,8 @@ sherlock-qa-bot/
 │   ├── model.py             # Gemma + LoRA 로딩 & 추론
 │   └── schemas.py           # Request/Response 구조체
 │
-├── 📁 static/               # 정적 파일
-│   ├── css/
-│   │   └── style.css        # 채팅 UI 스타일
-│   ├── js/
-│   │   └── chat.js          # 프론트엔드 로직
-│   └── images/
-│       └── favicon.svg      # 파비콘
-│
 ├── 📁 templates/
-│   └── index.html           # 웹 기반 채팅 UI
+│   └── index.html           # 웹 기반 채팅 UI (CSS/JS 포함)
 │
 ├── 📁 scripts/
 │   └── client.py            # API 테스트 스크립트
@@ -159,6 +155,8 @@ sherlock-qa-bot/
 ├── requirements.txt         # Python 패키지 목록
 └── README.md
 ```
+
+> 💡 **참고**: `templates/index.html` 파일에 모든 스타일(CSS)과 스크립트(JavaScript)가 포함되어 있어 별도의 static 폴더가 필요하지 않습니다.
 
 ---
 
@@ -181,7 +179,7 @@ sherlock-qa-bot/
 | **Deep Learning** | PyTorch 2.x, Transformers |
 | **Fine-Tuning** | PEFT (LoRA) |
 | **API Server** | FastAPI, Uvicorn |
-| **Frontend** | HTML5, CSS3, JavaScript |
+| **Frontend** | HTML5, CSS3, JavaScript (Single-file) |
 | **Templating** | Jinja2 |
 | **Development** | Jupyter Notebook |
 
@@ -208,7 +206,9 @@ print(answer)
 curl -X POST "http://localhost:8000/ask" \
   -H "Content-Type: application/json" \
   -d '{
-    "question": "What is the significance of the hound of the Baskervilles?"
+    "question": "What is the significance of the hound of the Baskervilles?",
+    "max_tokens": 300,
+    "temperature": 0.7
   }'
 ```
 
@@ -218,26 +218,16 @@ curl -X POST "http://localhost:8000/ask" \
 const response = await fetch('http://localhost:8000/ask', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ question: 'Who is Professor Moriarty?' })
+  body: JSON.stringify({ 
+    question: 'Who is Professor Moriarty?',
+    max_tokens: 300,
+    temperature: 0.7
+  })
 });
 
 const data = await response.json();
 console.log(data.answer);
 ```
-
----
-
-## 🎯 Features Roadmap
-
-- [x] LoRA 파인튜닝 완료
-- [x] FastAPI 서버 구축
-- [x] 웹 UI 구현
-- [x] HuggingFace Hub 통합
-- [ ] 스트리밍 응답 지원
-- [ ] 대화 컨텍스트 관리
-- [ ] 다국어 지원 (EN/KO)
-- [ ] Docker 컨테이너화
-- [ ] 클라우드 배포 가이드
 
 ---
 
@@ -249,18 +239,6 @@ console.log(data.answer);
 | Validation Loss | 0.85 | 0.74 | ⬇️ 12.9% |
 | Model Size | ~5GB | ~50MB | ⬇️ 99% (LoRA) |
 | Inference Speed | - | ~2-3s | CPU-friendly |
-
----
-
-## 🤝 Contributing
-
-프로젝트에 기여하고 싶으시다면:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
