@@ -2,9 +2,11 @@
 Sherlock Holmes QA Bot - FastAPI 메인
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 import logging
 from contextlib import asynccontextmanager
 
@@ -47,6 +49,9 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+# 템플릿 파일 설정
+templates = Jinja2Templates(directory="templates")
+
 # CORS 설정
 app.add_middleware(
     CORSMiddleware,
@@ -58,84 +63,10 @@ app.add_middleware(
 
 
 @app.get("/", response_class=HTMLResponse)
-async def root():
-    """루트 엔드포인트 - 간단한 웹 페이지"""
-    html_content = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Sherlock Holmes QA Bot</title>
-        <style>
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                max-width: 800px;
-                margin: 50px auto;
-                padding: 20px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-            }
-            .container {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 40px;
-                border-radius: 15px;
-                backdrop-filter: blur(10px);
-            }
-            h1 { font-size: 3em; margin-bottom: 10px; }
-            .emoji { font-size: 1.5em; }
-            a {
-                color: #ffd700;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            a:hover { text-decoration: underline; }
-            .info-box {
-                background: rgba(255, 255, 255, 0.2);
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 20px;
-            }
-            code {
-                background: rgba(0, 0, 0, 0.3);
-                padding: 2px 8px;
-                border-radius: 4px;
-                font-family: 'Courier New', monospace;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1><span class="emoji">🎩</span> Sherlock Holmes QA Bot</h1>
-            <p style="font-size: 1.2em;">셜록 홈즈 스토리 기반 질의응답 AI 챗봇</p>
-            
-            <div class="info-box">
-                <h2>📖 API 문서</h2>
-                <p>
-                    <a href="/docs" target="_blank">Swagger UI</a> |
-                    <a href="/redoc" target="_blank">ReDoc</a>
-                </p>
-            </div>
-            
-            <div class="info-box">
-                <h2>🚀 빠른 시작</h2>
-                <p><strong>POST /ask</strong> - 셜록에게 질문하기</p>
-                <pre><code>curl -X POST "http://localhost:8000/ask" \\
-  -H "Content-Type: application/json" \\
-  -d '{"question": "Who is Irene Adler?"}'</code></pre>
-            </div>
-            
-            <div class="info-box">
-                <h2>ℹ️ 정보</h2>
-                <p>
-                    📦 <strong>Model:</strong> Google Gemma-2-2B-IT + LoRA<br>
-                    🔗 <strong>GitHub:</strong> <a href="https://github.com/Sung1Lim/sherlock-qa-bot" target="_blank">Sung1Lim/sherlock-qa-bot</a><br>
-                    🤗 <strong>HuggingFace:</strong> <a href="https://huggingface.co/Sung1Lim/sherlock-holmes-lora" target="_blank">Sung1Lim/sherlock-holmes-lora</a>
-                </p>
-            </div>
-        </div>
-    </body>
-    </html>
-    """
-    return html_content
+async def root(request: Request):
+    """루트 엔드포인트 - 템플릿 기반 웹 페이지"""
+    # templates/index.html 렌더링
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/health", response_model=HealthResponse)
