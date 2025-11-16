@@ -121,7 +121,7 @@ curl -X POST "http://localhost:8000/ask" \
 |-----------|---------|
 | **Base Model** | [`google/gemma-2-2b-it`](https://huggingface.co/google/gemma-2-2b-it) |
 | **LoRA Model** | [`Sung1Lim/sherlock-holmes-qa`](https://huggingface.co/Sung1Lim/sherlock-holmes-qa) |
-| **Dataset** | 커스텀 Sherlock Holmes QA 데이터셋 |
+| **Dataset** | [`Alleinzellgaenger/sherlock-holmes-qa`](https://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa) |
 | **Fine-Tuning** | PEFT LoRA (r=16, alpha=32) |
 | **Training Loss** | 1.46 → 0.52 |
 | **Validation Loss** | 0.85 → 0.74 |
