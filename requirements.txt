@@ -15,7 +15,7 @@ safetensors==0.6.2
 peft==0.18.0
 
 # Model inference
-torch==2.8.0+cu128
+torch==2.8.0
 sentencepiece==0.2.1
 
 # Utilities
