@@ -99,12 +99,12 @@ uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 
 ## 🔌 API Endpoints | API 엔드포인트
 
-| Method | Endpoint | Description (EN) | 설명 (KR) |
-|--------|----------|------------------|-----------|
-| `GET` | `/` | Web Chat UI | 웹 채팅 UI |
-| `POST` | `/ask` | Ask Sherlock (configurable max_tokens, temperature) | 셜록에게 질문하기 (max_tokens, temperature 설정 가능) |
-| `GET` | `/health` | Check server & model status | 서버 & 모델 상태 확인 |
-| `GET` | `/docs` | Swagger documentation | Swagger 문서 |
+| Method | Endpoint | Description<br>설명 |
+|--------|----------|---------------------|
+| `GET` | `/` | Web Chat UI<br>웹 채팅 UI |
+| `POST` | `/ask` | Ask Sherlock (configurable max_tokens, temperature)<br>셜록에게 질문하기 (max_tokens, temperature 설정 가능) |
+| `GET` | `/health` | Check server & model status<br>서버 & 모델 상태 확인 |
+| `GET` | `/docs` | Swagger documentation<br>Swagger 문서 |
 
 ### 📝 Request Example | 요청 예시
 
@@ -134,14 +134,14 @@ curl -X POST "http://localhost:8000/ask" \
 
 <div align="center">
 
-| Component | Details |
+| Component<br>컴포넌트 | Details<br>상세 정보 |
 |-----------|---------|
-| **Base Model | 기본 모델** | [`google/gemma-2-2b-it`](https://huggingface.co/google/gemma-2-2b-it) |
-| **LoRA Model | LoRA 모델** | [`Sung1Lim/sherlock-holmes-qa`](https://huggingface.co/Sung1Lim/sherlock-holmes-qa) |
-| **Dataset | 데이터셋** | [`Alleinzellgaenger/sherlock-holmes-qa`](https://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa) |
-| **Fine-Tuning | 파인튜닝** | PEFT LoRA (r=16, alpha=32) |
-| **Training Loss | 학습 손실** | 1.46 → 0.52 |
-| **Validation Loss | 검증 손실** | 0.85 → 0.74 |
+| **Base Model**<br>기본 모델 | [`google/gemma-2-2b-it`](https://huggingface.co/google/gemma-2-2b-it) |
+| **LoRA Model**<br>LoRA 모델 | [`Sung1Lim/sherlock-holmes-qa`](https://huggingface.co/Sung1Lim/sherlock-holmes-qa) |
+| **Dataset**<br>데이터셋 | [`Alleinzellgaenger/sherlock-holmes-qa`](https://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa) |
+| **Fine-Tuning**<br>파인튜닝 | PEFT LoRA (r=16, alpha=32) |
+| **Training Loss**<br>학습 손실 | 1.46 → 0.52 |
+| **Validation Loss**<br>검증 손실 | 0.85 → 0.74 |
 
 </div>
 
@@ -192,15 +192,15 @@ sherlock-qa-bot/
 
 ### Libraries & Frameworks | 라이브러리 및 프레임워크
 
-| Category (EN) | 카테고리 (KR) | Technologies | 기술 |
-|---------------|--------------|--------------|------|
-| **Language** | **언어** | Python 3.10+ | Python 3.10+ |
-| **Deep Learning** | **딥러닝** | PyTorch 2.x, Transformers | PyTorch 2.x, Transformers |
-| **Fine-Tuning** | **파인튜닝** | PEFT (LoRA) | PEFT (LoRA) |
-| **API Server** | **API 서버** | FastAPI, Uvicorn | FastAPI, Uvicorn |
-| **Frontend** | **프론트엔드** | HTML5, CSS3, JavaScript (Single-file) | HTML5, CSS3, JavaScript (단일 파일) |
-| **Templating** | **템플릿** | Jinja2 | Jinja2 |
-| **Development** | **개발** | Jupyter Notebook | Jupyter Notebook |
+| Category<br>카테고리 | Technologies<br>기술 |
+|---------------|--------------|
+| **Language**<br>언어 | Python 3.10+ |
+| **Deep Learning**<br>딥러닝 | PyTorch 2.x, Transformers |
+| **Fine-Tuning**<br>파인튜닝 | PEFT (LoRA) |
+| **API Server**<br>API 서버 | FastAPI, Uvicorn |
+| **Frontend**<br>프론트엔드 | HTML5, CSS3, JavaScript (Single-file)<br>HTML5, CSS3, JavaScript (단일 파일) |
+| **Templating**<br>템플릿 | Jinja2 |
+| **Development**<br>개발 | Jupyter Notebook |
 
 </div>
 
@@ -252,12 +252,12 @@ console.log(data.answer);
 
 ## 📊 Performance | 성능
 
-| Metric (EN) | 지표 (KR) | Before | After | Improvement | 개선율 |
-|-------------|-----------|--------|-------|-------------|--------|
-| Training Loss | 학습 손실 | 1.46 | 0.52 | ⬇️ 64.4% | ⬇️ 64.4% |
-| Validation Loss | 검증 손실 | 0.85 | 0.74 | ⬇️ 12.9% | ⬇️ 12.9% |
-| Model Size | 모델 크기 | ~5GB | ~50MB | ⬇️ 99% (LoRA) | ⬇️ 99% (LoRA) |
-| Inference Speed | 추론 속도 | - | ~2-3s | CPU-friendly | CPU 친화적 |
+| Metric<br>지표 | Before<br>이전 | After<br>이후 | Improvement<br>개선율 |
+|-------------|--------|-------|-------------|
+| Training Loss<br>학습 손실 | 1.46 | 0.52 | ⬇️ 64.4% |
+| Validation Loss<br>검증 손실 | 0.85 | 0.74 | ⬇️ 12.9% |
+| Model Size<br>모델 크기 | ~5GB | ~50MB | ⬇️ 99% (LoRA) |
+| Inference Speed<br>추론 속도 | - | ~2-3s | CPU-friendly<br>CPU 친화적 |
 
 ---
 
