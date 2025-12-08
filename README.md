@@ -1,9 +1,3 @@
-Here is the README file, reformatted with English and Korean side-by-side for better accessibility.
-
------
-
-\<div align="center"\>
-
 # 🎩 Sherlock Holmes QA Bot
 
 **Sherlock Holmes Universe LoRA Fine-Tuned QA Chatbot**
