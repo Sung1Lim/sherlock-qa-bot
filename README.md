@@ -1,86 +1,92 @@
-# 🎩 Sherlock Holmes QA Bot
+<div align="center">
 
-**Sherlock Holmes Universe LoRA Fine-Tuned QA Chatbot**
-<br>
+# 🎩 Sherlock Holmes QA Bot
+# 🎩 셜록 홈즈 QA 챗봇
+
+**Sherlock Holmes Universe-Based LoRA Fine-tuned QA Chatbot**  
 **셜록 홈즈 세계관 기반 LoRA 파인튜닝 QA 챗봇**
 
-[](https://www.python.org)
-[](https://pytorch.org)
-[](https://fastapi.tiangolo.com)
-[](https://huggingface.co)
-[](https://www.google.com/search?q=LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white)](https://pytorch.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![HuggingFace](https://img.shields.io/badge/🤗-Transformers-FFD21E?style=flat)](https://huggingface.co)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](LICENSE)
 
-A lightweight AI chatbot fine-tuned on the **Google Gemma-2-2B-IT** model using LoRA, specialized for answering questions within the Sherlock Holmes universe. It includes a web-based demo UI and a FastAPI server, allowing you to run the **SHERLOCK Chatbot** locally.
+A lightweight AI chatbot that provides specialized question-answering performance focused on Sherlock Holmes by fine-tuning the Google Gemma-2-2B-IT model using the LoRA method.
 
-Google Gemma-2-2B-IT 모델을 LoRA 방식으로 파인튜닝하여 셜록 홈즈에 특화된 질의응답 성능을 제공하는 경량 AI 챗봇입니다. 웹 기반 데모 UI와 FastAPI 서버를 포함하고 있어 로컬 환경에서 바로 **SHERLOCK 챗봇**을 실행할 수 있습니다.
+Includes a web-based demo UI and FastAPI server, allowing you to run the **SHERLOCK chatbot** immediately in your local environment.
 
-[Demo](https://www.google.com/search?q=%23-quick-start) • [Features](https://www.google.com/search?q=%23-features) • [API Docs](https://www.google.com/search?q=%23-api-endpoints)
+Google Gemma-2-2B-IT 모델을 LoRA 방식으로 파인튜닝하여 셜록 홈즈에 특화된 질의응답 성능을 제공하는 경량 AI 챗봇입니다.
 
-\<img src="[https://img.shields.io/badge/Status-Active-success?style=for-the-badge](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)" alt="Status"\>
+웹 기반 데모 UI와 FastAPI 서버를 포함하고 있어 로컬 환경에서 바로 **SHERLOCK 챗봇**을 실행할 수 있습니다.
 
-\</div\>
+[Demo](#-quick-start) • [Features](#-features) • [API Docs](#-api-endpoints)
 
------
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
 
-## 🚀 Features
+</div>
 
-\<table\>
-\<tr\>
-\<td\>
+---
 
-✨ **Key Features (핵심 기능)**
+## 🚀 Features | 주요 기능
 
-  - 🧠 **Model**: Sherlock-Holmes QA model based on Gemma-2-2B-IT + LoRA (PEFT).
-    <br>(Gemma-2-2B-IT + LoRA(PEFT) 기반 Sherlock-Holmes QA 모델)
-  - 📥 **Auto-Load**: Automatic model loading from HuggingFace Hub.
-    <br>(HuggingFace Hub 자동 모델 로딩)
-  - ⚡ **Server**: FastAPI + Uvicorn REST API server.
-    <br>(FastAPI + Uvicorn REST API 서버)
-  - 🎨 **UI**: All-in-one Web UI (Victorian theme, CSS/JS included).
-    <br>(올인원 웹 UI - 빅토리아 시대 테마, CSS/JS 내장)
-  - 📚 **Docs**: Automatic Health Check / Swagger documentation.
-    <br>(헬스체크 / Swagger 문서 자동 제공)
-  - 💻 **Efficiency**: Capable of running in a CPU-only environment.
-    <br>(CPU 환경에서도 실행 가능)
+<table>
+<tr>
+<td>
 
-\</td\>
-\</tr\>
-\</table\>
+### ✨ **Key Features | 핵심 기능**
 
------
+**English:**
+- 🧠 Gemma-2-2B-IT + LoRA(PEFT) based Sherlock-Holmes QA model
+- 📥 Automatic model loading from HuggingFace Hub
+- ⚡ FastAPI + Uvicorn REST API server
+- 🎨 All-in-one Web UI (Victorian era theme, embedded CSS/JS)
+- 📚 Health check / Automatic Swagger documentation
+- 💻 Executable even in CPU environments
 
-## 📦 Quick Start
+**한국어:**
+- 🧠 Gemma-2-2B-IT + LoRA(PEFT) 기반 Sherlock-Holmes QA 모델
+- 📥 HuggingFace Hub 자동 모델 로딩
+- ⚡ FastAPI + Uvicorn REST API 서버
+- 🎨 올인원 웹 UI (빅토리아 시대 테마, CSS/JS 내장)
+- 📚 헬스체크 / Swagger 문서 자동 제공
+- 💻 CPU 환경에서도 실행 가능
 
-### 1️⃣ Installation (설치)
+</td>
+</tr>
+</table>
+
+---
+
+## 📦 Quick Start | 빠른 시작
+
+### 1️⃣ Installation | 설치
 
 ```bash
-# Clone repository
+# Clone repository | 저장소 복제
 git clone https://github.com/your-username/sherlock-qa-bot.git
 cd sherlock-qa-bot
 
-# Install dependencies
+# Install dependencies | 의존성 설치
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Run FastAPI Server (서버 실행)
+### 2️⃣ Run FastAPI Server | FastAPI 서버 실행
 
-**Option 1: Simple Run (간편 실행)**
-
+**Option 1: Simple Run | 옵션 1: 간단 실행**
 ```bash
 python run.py
 ```
 
-**Option 2: Manual Run (수동 실행)**
-
+**Option 2: Manual Run | 옵션 2: 수동 실행**
 ```bash
 uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 3️⃣ Access the Chatbot UI (접속)
+### 3️⃣ Access the Chatbot UI | 챗봇 UI 접속
 
-Open your browser and navigate to the following addresses:
-<br>
-브라우저에서 다음 주소로 접속하세요:
+**English:** Open your browser and navigate to:  
+**한국어:** 브라우저에서 다음 주소로 접속하세요:
 
 ```
 🌐 Web UI:     http://localhost:8000
@@ -89,18 +95,18 @@ Open your browser and navigate to the following addresses:
 ❤️  Health:     http://localhost:8000/health
 ```
 
------
+---
 
-## 🔌 API Endpoints
+## 🔌 API Endpoints | API 엔드포인트
 
-| Method | Endpoint | Description (English) | Description (Korean) |
-|:------:|:---------|:----------------------|:---------------------|
+| Method | Endpoint | Description (EN) | 설명 (KR) |
+|--------|----------|------------------|-----------|
 | `GET` | `/` | Web Chat UI | 웹 채팅 UI |
-| `POST` | `/ask` | Ask Sherlock a question (supports max\_tokens, temperature) | 셜록에게 질문하기 (파라미터 설정 가능) |
-| `GET` | `/health` | Check server & model status | 서버 및 모델 상태 확인 |
-| `GET` | `/docs` | Swagger Documentation | Swagger 문서 |
+| `POST` | `/ask` | Ask Sherlock (configurable max_tokens, temperature) | 셜록에게 질문하기 (max_tokens, temperature 설정 가능) |
+| `GET` | `/health` | Check server & model status | 서버 & 모델 상태 확인 |
+| `GET` | `/docs` | Swagger documentation | Swagger 문서 |
 
-### 📝 Request Example
+### 📝 Request Example | 요청 예시
 
 ```bash
 curl -X POST "http://localhost:8000/ask" \
@@ -112,7 +118,7 @@ curl -X POST "http://localhost:8000/ask" \
   }'
 ```
 
-### 📤 Response Example
+### 📤 Response Example | 응답 예시
 
 ```json
 {
@@ -122,89 +128,92 @@ curl -X POST "http://localhost:8000/ask" \
 }
 ```
 
------
+---
 
-## 🧠 Model Information
+## 🧠 Model | 모델
 
-\<div align="center"\>
+<div align="center">
 
 | Component | Details |
 |-----------|---------|
-| **Base Model** | [`google/gemma-2-2b-it`](https://www.google.com/search?q=%5Bhttps://huggingface.co/google/gemma-2-2b-it%5D\(https://huggingface.co/google/gemma-2-2b-it\)) |
-| **LoRA Model** | [`Sung1Lim/sherlock-holmes-qa`](https://www.google.com/search?q=%5Bhttps://huggingface.co/Sung1Lim/sherlock-holmes-qa%5D\(https://huggingface.co/Sung1Lim/sherlock-holmes-qa\)) |
-| **Dataset** | [`Alleinzellgaenger/sherlock-holmes-qa`](https://www.google.com/search?q=%5Bhttps://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa%5D\(https://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa\)) |
-| **Fine-Tuning** | PEFT LoRA (r=16, alpha=32) |
-| **Training Loss** | 1.46 → 0.52 |
-| **Validation Loss** | 0.85 → 0.74 |
+| **Base Model | 기본 모델** | [`google/gemma-2-2b-it`](https://huggingface.co/google/gemma-2-2b-it) |
+| **LoRA Model | LoRA 모델** | [`Sung1Lim/sherlock-holmes-qa`](https://huggingface.co/Sung1Lim/sherlock-holmes-qa) |
+| **Dataset | 데이터셋** | [`Alleinzellgaenger/sherlock-holmes-qa`](https://huggingface.co/datasets/Alleinzellgaenger/sherlock-holmes-qa) |
+| **Fine-Tuning | 파인튜닝** | PEFT LoRA (r=16, alpha=32) |
+| **Training Loss | 학습 손실** | 1.46 → 0.52 |
+| **Validation Loss | 검증 손실** | 0.85 → 0.74 |
 
-\</div\>
+</div>
 
-> 💡 **Auto-Loading**: When FastAPI starts, it automatically downloads and loads the checkpoint from the HuggingFace Hub.
-> <br>
-> 💡 **자동 로딩**: FastAPI 실행 시 HuggingFace Hub에서 자동으로 체크포인트를 다운로드하여 로딩합니다.
+> 💡 **Auto-loading (EN)**: Automatically downloads and loads checkpoints from HuggingFace Hub when running FastAPI.  
+> 💡 **자동 로딩 (KR)**: FastAPI 실행 시 HuggingFace Hub에서 자동으로 체크포인트를 다운로드하여 로딩합니다.
 
------
+---
 
-## 🏗️ Project Structure
+## 🏗️ Project Structure | 프로젝트 구조
 
 ```
 sherlock-qa-bot/
 │
 ├── 📁 api/
-│   ├── main.py              # FastAPI Endpoints + Web UI
-│   ├── model.py             # Gemma + LoRA Loading & Inference
-│   └── schemas.py           # Request/Response Schemas
+│   ├── main.py              # FastAPI endpoints + Web UI | FastAPI 엔드포인트 + 웹 UI
+│   ├── model.py             # Gemma + LoRA loading & inference | Gemma + LoRA 로딩 & 추론
+│   └── schemas.py           # Request/Response schemas | Request/Response 구조체
 │
 ├── 📁 templates/
-│   └── index.html           # Web Chat UI (CSS/JS included)
+│   └── index.html           # Web-based chat UI (incl. CSS/JS) | 웹 기반 채팅 UI (CSS/JS 포함)
 │
 ├── 📁 scripts/
-│   └── client.py            # API Test Script
+│   └── client.py            # API test script | API 테스트 스크립트
 │
 ├── 📁 notebooks/
-│   └── train_sherlock.ipynb # LoRA Training Notebook
+│   └── train_sherlock.ipynb # LoRA training notebook | LoRA 학습 노트북
 │
-├── run.py                   # Server Entry Point
-├── requirements.txt         # Dependencies
+├── run.py                   # Server execution script | 서버 실행 스크립트
+├── requirements.txt         # Python package list | Python 패키지 목록
 └── README.md
 ```
 
-> 💡 **Note**: The `templates/index.html` file contains all styles (CSS) and scripts (JavaScript), so no separate static folder is required.
-> <br>
-> 💡 **참고**: `templates/index.html` 파일에 모든 스타일(CSS)과 스크립트(JavaScript)가 포함되어 있어 별도의 static 폴더가 필요하지 않습니다.
+> 💡 **Note (EN)**: The `templates/index.html` file contains all styles (CSS) and scripts (JavaScript), eliminating the need for a separate static folder.  
+> 💡 **참고 (KR)**: `templates/index.html` 파일에 모든 스타일(CSS)과 스크립트(JavaScript)가 포함되어 있어 별도의 static 폴더가 필요하지 않습니다.
 
------
+---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack | 기술 스택
 
-\<div align="center"\>
+<div align="center">
 
-### Core Technologies
+### Core Technologies | 핵심 기술
 
-### Libraries & Frameworks
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/🤗_Hugging_Face-FFD21E?style=for-the-badge&logoColor=black)
 
-| Category | Technologies |
-|----------|-------------|
-| **Language** | Python 3.10+ |
-| **Deep Learning** | PyTorch 2.x, Transformers |
-| **Fine-Tuning** | PEFT (LoRA) |
-| **API Server** | FastAPI, Uvicorn |
-| **Frontend** | HTML5, CSS3, JavaScript (Single-file) |
-| **Templating** | Jinja2 |
-| **Development** | Jupyter Notebook |
+### Libraries & Frameworks | 라이브러리 및 프레임워크
 
-\</div\>
+| Category (EN) | 카테고리 (KR) | Technologies | 기술 |
+|---------------|--------------|--------------|------|
+| **Language** | **언어** | Python 3.10+ | Python 3.10+ |
+| **Deep Learning** | **딥러닝** | PyTorch 2.x, Transformers | PyTorch 2.x, Transformers |
+| **Fine-Tuning** | **파인튜닝** | PEFT (LoRA) | PEFT (LoRA) |
+| **API Server** | **API 서버** | FastAPI, Uvicorn | FastAPI, Uvicorn |
+| **Frontend** | **프론트엔드** | HTML5, CSS3, JavaScript (Single-file) | HTML5, CSS3, JavaScript (단일 파일) |
+| **Templating** | **템플릿** | Jinja2 | Jinja2 |
+| **Development** | **개발** | Jupyter Notebook | Jupyter Notebook |
 
------
+</div>
 
-## 💡 Usage Examples
+---
 
-### Python Client
+## 💡 Usage Examples | 사용 예시
+
+### Python Client | Python 클라이언트
 
 ```python
 from scripts.client import ask_sherlock
 
-# Ask a question (질문하기)
+# Ask a question | 질문하기
 question = "Who is Irene Adler?"
 answer = ask_sherlock(question)
 print(answer)
@@ -239,40 +248,41 @@ const data = await response.json();
 console.log(data.answer);
 ```
 
------
+---
 
-## 📊 Performance
+## 📊 Performance | 성능
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Training Loss | 1.46 | 0.52 | ⬇️ 64.4% |
-| Validation Loss | 0.85 | 0.74 | ⬇️ 12.9% |
-| Model Size | \~5GB | \~50MB | ⬇️ 99% (LoRA) |
-| Inference Speed | - | \~2-3s | CPU-friendly |
+| Metric (EN) | 지표 (KR) | Before | After | Improvement | 개선율 |
+|-------------|-----------|--------|-------|-------------|--------|
+| Training Loss | 학습 손실 | 1.46 | 0.52 | ⬇️ 64.4% | ⬇️ 64.4% |
+| Validation Loss | 검증 손실 | 0.85 | 0.74 | ⬇️ 12.9% | ⬇️ 12.9% |
+| Model Size | 모델 크기 | ~5GB | ~50MB | ⬇️ 99% (LoRA) | ⬇️ 99% (LoRA) |
+| Inference Speed | 추론 속도 | - | ~2-3s | CPU-friendly | CPU 친화적 |
 
------
+---
 
-## 📄 License
+## 📄 License | 라이선스
 
-This project is licensed under the **MIT License** - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+**English:** This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
------
+**한국어:** 이 프로젝트는 **MIT 라이선스** 하에 배포됩니다 - 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-## 💬 Contact & Support
+---
 
-\<div align="center"\>
+## 💬 Contact & Support | 연락처 및 지원
 
-**Please leave suggestions or questions as GitHub Issues\!**
-<br>
-**프로젝트 관련 제안이나 질문은 GitHub Issues로 남겨주세요\!**
+<div align="center">
 
-[](https://github.com/your-username/sherlock-qa-bot/issues)
-[](https://huggingface.co/Sung1Lim/sherlock-holmes-qa)
+**English:** For suggestions or questions about the project, please open a GitHub Issue!  
+**한국어:** 프로젝트 관련 제안이나 질문은 GitHub Issues로 남겨주세요!
 
------
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-181717?style=for-the-badge&logo=github)](https://github.com/your-username/sherlock-qa-bot/issues)
+[![HuggingFace](https://img.shields.io/badge/🤗-Model_Card-FFD21E?style=for-the-badge)](https://huggingface.co/Sung1Lim/sherlock-holmes-qa)
 
-### ⭐ Star this project if you find it useful\!
+---
+
+### ⭐ Star this project if you find it useful! | 유용하다면 프로젝트에 Star를 눌러주세요!
 
 Made with ❤️ by [Sung1Lim](https://github.com/Sung1Lim)
 
-\</div\>
+</div>
